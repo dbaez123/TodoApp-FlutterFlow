@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dbaez123/TodoApp-FlutterFlow/blob/main/schemas/users.schema.json",
+  "title": "Todo User",
+  "description": "Schema for user documents in the users Firestore collection.",
+  "type": "object",
+  "properties": {
+    "email": {
+      "description": "The user's email address.",
+      "type": "string",
+      "format": "email"
+    },
+    "display_name": {
+      "description": "The name displayed for the user.",
+      "type": "string"
+    },
+    "photo_url": {
+      "description": "An optional URL for the user's profile photo.",
+      "type": "string",
+      "format": "uri"
+    },
+    "uid": {
+      "description": "The Firebase Authentication UID for the user.",
+      "type": "string",
+      "minLength": 1
+    },
+    "created_time": {
+      "description": "The Firestore timestamp when the user document was created.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "phone_number": {
+      "description": "An optional phone number for the user.",
+      "type": "string"
+    },
+    "birthdate": {
+      "description": "An optional birthdate stored as a Firestore timestamp.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "age": {
+      "description": "An optional integer age for the user.",
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": ["email", "display_name", "uid", "created_time"],
+  "additionalProperties": false
+}
