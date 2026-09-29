@@ -195,7 +195,12 @@ class _TasksWidgetState extends State<TasksWidget> {
                               key: Key(
                                   'Keyu3r_${listViewIndex}_of_${listViewTasksRecordList.length}'),
                               tasksDocument: listViewTasksRecord,
-                              checkAction: () async {},
+                              checkAction: () async {
+                                await listViewTasksRecord.reference
+                                    .update(createTasksRecordData(
+                                  completed: true,
+                                ));
+                              },
                             ),
                           );
                         },
